@@ -1,11 +1,11 @@
 MEDIA = /media/PANDORA/psp/game/CAT_Homebrews\ perso/
 TARGET = danzeff_sample
 
-OBJS = main.o
-LIBS = -ldanzeff -lintrafont -lglib2d -ljpeg -lpng -lz -lpspgum -lpspgu \
+OBJS = main.o ../danzeff.o
+LIBS = -lintrafont -lglib2d -ljpeg -lpng -lz -lpspgum -lpspgu \
        -lpsprtc -lm -lpspvram
 
-CFLAGS = -O2 -G0 -Wall
+CFLAGS = -O2 -G0 -Wall -I./include -I../ -L./lib
 CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
 ASFLAGS = $(CFLAGS)
 

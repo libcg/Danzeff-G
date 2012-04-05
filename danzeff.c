@@ -121,6 +121,7 @@ DanzeffChar danzeffRead(SceCtrlData pad)
         if (pad.Buttons &
             (PSP_CTRL_CROSS|PSP_CTRL_CIRCLE|PSP_CTRL_TRIANGLE|PSP_CTRL_SQUARE))
         {
+            choice = 0;
             if      (pad.Buttons & PSP_CTRL_TRIANGLE)
                 choice = 0;
             else if (pad.Buttons & PSP_CTRL_SQUARE)
