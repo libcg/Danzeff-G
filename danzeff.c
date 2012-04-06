@@ -1,16 +1,12 @@
-// Danzeff-G by Geecko - A complete rewrite of the Danzeff OSK library.
+// Danzeff-G - A complete rewrite of the Danzeff OSK library.
 //
-// This work is licensed under the Creative Commons BY-SA 3.0 Unported License.
-// See LICENSE for more details.
+// This work is BSD-licensed. See LICENSE for more details.
 //
 // Please report bugs at : geecko.dev@free.fr
 
 #include "danzeff.h"
-
 #include <glib2d.h>
-
-#include "danzeff.h"
-#include "pspkernel.h"
+#include <pspkernel.h>
 
 #define TEX_N 8
 #define MODE_N 2
