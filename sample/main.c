@@ -30,14 +30,16 @@ int main()
     DanzeffChar dchar;
     char str[1024] = "Edit me!";
     int str_size = 8;
-    bool mode = true;
 
     SetupCallbacks();
     sceCtrlSetSamplingMode(PSP_CTRL_MODE_ANALOG);
     g2dInit();
     intraFontInit();
     font = intraFontLoad("flash0:/font/ltn8.pgf", INTRAFONT_CACHE_MED);
+    
     danzeffInit();
+    danzeffSetMode(DANZEFF_LETTERS);
+    danzeffSetModeLock(false);
     
     while (1)
     {
@@ -54,13 +56,9 @@ int main()
             case DANZEFF_LEFT:
             case DANZEFF_RIGHT:
             case DANZEFF_SELECT:
+            case DANZEFF_START:
             case '\0':
                 break; // Do nothing
-                
-            case DANZEFF_START:
-                mode = !mode;
-                danzeffSetMode(mode);
-                break;
                 
             default: // ASCII char
                 if (str_size+2 >= 1024) break;

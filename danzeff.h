@@ -3,8 +3,8 @@
  * \brief Danzeff-G header
  */
 
-#ifndef DANZEFF_HEAD
-#define DANZEFF_HEAD
+#ifndef DANZEFF_HEADER
+#define DANZEFF_HEADER
 
 #ifdef __cplusplus
 extern "C" {
@@ -16,13 +16,19 @@ extern "C" {
 #define DANZEFF_W 150
 #define DANZEFF_H 150
 
-enum DanzeffKeys
+typedef enum
+{
+    DANZEFF_LETTERS = 0,
+    DANZEFF_NUMBERS = 1
+} DanzeffMode;
+
+typedef enum
 {
     DANZEFF_LEFT = 1,
     DANZEFF_RIGHT = 2,
     DANZEFF_SELECT = 3,
     DANZEFF_START = 4
-};
+} DanzeffKey;
 
 typedef unsigned int DanzeffChar;
 
@@ -31,11 +37,12 @@ void danzeffTerm();
 DanzeffChar danzeffRead(SceCtrlData pad);
 void danzeffRender(int x, int y);
 //void danzeffSetRotated(bool rotated);
-void danzeffSetMode(bool mode);
+void danzeffSetMode(unsigned int mode);
+void danzeffSetModeLock(bool lock);
 bool danzeffIsDirty();
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif // DANZEFF_HEAD
+#endif // DANZEFF_HEADER
