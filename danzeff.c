@@ -161,19 +161,15 @@ DanzeffChar danzeffRead(SceCtrlData pad)
 
 void danzeffRender(int x, int y)
 {
-    g2dColor color;
-
     d_dirty = false;
-    color = WHITE;
-    
-    if (d_selected_x != 1 || d_selected_y != 1)
-    {
-        color = G2D_MODULATE(color, 255, 128);
-    }
 
     g2dBeginRects(d_tex[4*d_mode + 2*d_shifted]);
     {
-        g2dSetColor(color);
+        if (d_selected_x != 1 || d_selected_y != 1)
+        {
+            g2dSetAlpha(128);
+        }
+
         g2dSetCoordXY(x, y);
         g2dAdd();
     }
