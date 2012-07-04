@@ -22,7 +22,7 @@ static bool d_init = false;
 static int d_selected_x = 1;
 static int d_selected_y = 1;
 
-g2dImage *d_tex[TEX_N] = {0};
+g2dTexture *d_tex[TEX_N] = {0};
 
 static char d_path[TEX_N][32] =
 {
